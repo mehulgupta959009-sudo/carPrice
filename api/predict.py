@@ -10,7 +10,7 @@ from predictor import predict_price
 
 def handler(request, context=None):
     try:
-        body = request.get('body', '{}')
+        body = request.get('body', '{}') if isinstance(request, dict) else '{}'
         if isinstance(body, (bytes, bytearray)):
             body = body.decode('utf-8')
         payload = json.loads(body) if body else {}
@@ -29,3 +29,10 @@ def handler(request, context=None):
             'headers': {'Content-Type': 'application/json'},
             'body': json.dumps({'error': str(exc)})
         }
+
+
+def app(request, context=None):
+    return handler(request, context)
+
+
+application = app
