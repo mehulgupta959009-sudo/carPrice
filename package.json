@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "python app.py"
+    "dev": "python app.py",
+    "build": "cd frontend && npm run build"
   }
 }
