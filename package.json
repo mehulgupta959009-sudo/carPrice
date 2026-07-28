@@ -1,0 +1,8 @@
+{
+  "name": "car-price-estimator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python app.py"
+  }
+}
