@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.py",
+      "src": "api/predict.py",
       "use": "@vercel/python"
     },
     {
@@ -17,10 +17,6 @@
     {
       "src": "/api/(.*)",
       "dest": "/api/predict.py"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/dist/assets/$1"
     },
     {
       "src": "/(.*)",
